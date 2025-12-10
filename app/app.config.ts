@@ -3,17 +3,14 @@ export default defineAppConfig({
   ui: {
     button: {
       slots: {
-        base: 'rounded-none cursor-pointer'
+        base:[ 'rounded-none cursor-pointer']
       }
     },
     input: {
-      slots: {
-        base: ' inset-ring-1',
-      },
       variants: {
         variant: {
-          outline: 'inset-ring-black',
-        },
+          outline: 'ring ring-inset ring-accented ring-accent-500',
+        }
       }
     }
   }
