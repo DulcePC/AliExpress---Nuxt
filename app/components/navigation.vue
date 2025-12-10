@@ -32,7 +32,7 @@
           </li>
           <li>
             <div class="nav-item-top">
-              <UIcon class="icon"  name="teenyicons:cart-outline" />
+              <UIcon class="icon"  name="ph:shopping-cart-simple-light" />
               <div class="flex flex-col">
                 <span>01</span>
                 <span class="text"><b>Cesta</b></span>

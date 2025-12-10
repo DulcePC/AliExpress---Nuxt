@@ -7,6 +7,9 @@ export default defineAppConfig({
       }
     },
     input: {
+      slots: {
+        base: ['rounded-none font-semibold placeholder:font-normal' ]
+      },
       variants: {
         variant: {
           outline: 'ring ring-inset ring-accented ring-accent-500',
