@@ -15,6 +15,18 @@ export default defineAppConfig({
           outline: 'ring ring-inset ring-accented ring-accent-500',
         }
       }
+    },
+    card: {
+      slots: {
+        root: 'rounded-none p-2 border-none !ring-0 box-shadow-none bg-white',
+        header: '!p-0 px-0 !-mx-2 !-mt-2 relative',
+        body: '!p-0 px-0 !pt-2',
+      },
+    },
+    badge: {
+      slots: {
+        base: 'font-bold'
+      }
     }
   }
 })
