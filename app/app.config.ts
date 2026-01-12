@@ -3,7 +3,7 @@ export default defineAppConfig({
   ui: {
     button: {
       slots: {
-        base:[ 'rounded-none cursor-pointer']
+        base:[ 'rounded-none cursor-pointer text-center font-bold' ]
       }
     },
     input: {

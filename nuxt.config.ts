@@ -17,7 +17,8 @@ export default defineNuxtConfig({
     '@nuxt/ui',
     '@nuxt/icon',
     '@pinia/nuxt',
-    '@unlok-co/nuxt-stripe'
+    '@unlok-co/nuxt-stripe',
+    '@nuxt/image'
   ],
   css: ['~/assets/css/main.css'],
   ui: {
@@ -28,4 +29,7 @@ export default defineNuxtConfig({
       stripePk: process.env.STRIPE_PK || '',
     }
   },
+  image: {
+    format: ['webp']
+  }
 })
