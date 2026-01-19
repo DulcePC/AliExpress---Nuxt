@@ -28,6 +28,20 @@ export const useCart = () => {
     cart.value = cart.value.filter(cartItem => cartItem.item.id !== itemId);
   };
 
+  const incrementQuantity = (cartId: number) => {
+    const item = cart.value.find(cartItem => cartItem.id === cartId);
+    if (item) {
+      item.item.quantity++;
+    }
+  };
+
+  const decrementQuantity = (cartId: number) => {
+    const item = cart.value.find(cartItem => cartItem.id === cartId);
+    if (item && item.item.quantity > 1) {
+      item.item.quantity--;
+    }
+  };
+
   const clearCart = () => {
     cart.value = [];
   };
@@ -38,6 +52,8 @@ export const useCart = () => {
     quantity,
     addToCart,
     removeFromCart,
+    incrementQuantity,
+    decrementQuantity,
     clearCart,
   };
 };

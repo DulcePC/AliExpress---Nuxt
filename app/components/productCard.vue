@@ -1,10 +1,10 @@
 <template>
-  <UCard as="NuxtLink" :ui="{
+  <UCard as="NuxtLink" :to="`/item/${product?.id}`" :ui="{
     body: 'overflow-hidden',
 
   }">
     <template #header>
-      <img src="https://picsum.photos/id/46/400" alt="Product Image" class="w-full h-48 object-cover" />
+      <img :src="product?.imageUrl || 'https://picsum.photos/id/46/400'" :alt="product?.name" class="w-full h-48 object-cover" />
       <UButton
         icon="material-symbols:add-shopping-cart-sharp"
         size="xl"
@@ -16,23 +16,24 @@
     <template #default>
       <div class="flex items-center gap-1">
         <UBadge
+          v-if="product?.topSeller"
           label="Choice"
           color="warning"
           size="xs" :ui="{
             base: 'text-black'
           }"
         />
-        <UBadge label="Promo" color="error" size="xs" />
-        <h6 class="whitespace-nowrap text-sm text-[#191919]">Funda protectora para auriculares AirPods de silicona suave y duradera, compatible con AirPods 1, 2 y Pro. Diseño elegante y ligero que ofrece protección contra golpes y arañazos.</h6>
+        <UBadge v-if="product?.discount" label="Promo" color="error" size="xs" />
+        <h6 class="whitespace-nowrap text-sm text-[#191919]">{{ product?.name }}</h6>
       </div>
       <p class="font-bold my-1 flex flex-wrap items-center gap-1">
         <span class="text-sm">DOP</span>
-        <span class="text-xl">{{ formatNumber(1234) }}</span>
-        <span class="font-normal text-sm text-gray-400 line-through">DOP{{ formatNumber(1234) }}</span>
+        <span class="text-xl">{{ formatNumber(product?.price || 0) }}</span>
+        <span v-if="product?.discount" class="font-normal text-sm text-gray-400 line-through">DOP{{ formatNumber((product?.price || 0) + (product?.discount || 0)) }}</span>
       </p>
-      <p class="offer-text">
+      <p v-if="product?.discount" class="offer-text">
         <img src="https://ae01.alicdn.com/kf/S0f1bc1aeb2ab4de98568b86f99bcd0991/42x60.png" width="11" alt="Product Image">
-        Ahorra DOP2.5
+        Ahorra DOP{{ formatNumber(product?.discount || 0) }}
       </p>
     </template>
   </UCard>

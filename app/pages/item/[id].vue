@@ -150,9 +150,9 @@
           <div>
             <h6 class="text-black font-bold text-base mb-2">Cantidad</h6>
             <div class="flex items-center gap-1">
-              <UButton :disabled="quantity <= 1" icon="i-lucide-minus" size="xs" color="primary" variant="solid" :ui="{ base: 'rounded-full' }" @click="decrementQuantity" />
+              <UButton :disabled="quantity <= 1" icon="i-lucide-minus" size="xs" color="primary" variant="solid" :ui="{ base: 'rounded-full' }" @click="decrementQuantity(product.id)" />
               <input type="number" min="1" v-model="quantity" />
-              <UButton icon="i-lucide-plus" size="xs" color="primary" variant="solid" :ui="{ base: 'rounded-full' }" @click="incrementQuantity" />
+              <UButton icon="i-lucide-plus" size="xs" color="primary" variant="solid" :ui="{ base: 'rounded-full' }" @click="incrementQuantity(product.id)" />
             </div>
           </div>
           <UButton
@@ -207,7 +207,7 @@ definePageMeta({
   layout: 'product-detail'
 })
 
-const { addToCart } = useCart();
+const { addToCart, incrementQuantity, decrementQuantity } = useCart();
 const quantity = ref(1);
 
 // Producto de ejemplo (esto debería venir de una API)
@@ -223,16 +223,6 @@ const product = ref({
   topSeller: true,
   slug: 'reloj-pulsera-hombres'
 });
-
-const incrementQuantity = () => {
-  quantity.value++;
-};
-
-const decrementQuantity = () => {
-  if (quantity.value > 1) {
-    quantity.value--;
-  }
-};
 
 const handleAddToCart = () => {
   addToCart({

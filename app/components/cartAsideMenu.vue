@@ -28,7 +28,26 @@
               />
               <div class="flex-1 min-w-0">
                 <h4 class="text-sm font-medium text-gray-900 truncate">{{ item.item.name }}</h4>
-                <p class="text-xs text-gray-500 mt-1">Cantidad: {{ item.item.quantity }}</p>
+                <div class="flex items-center gap-2 mt-2">
+                  <UButton
+                    icon="i-lucide-minus"
+                    size="xs"
+                    color="neutral"
+                    variant="outline"
+                    :disabled="item.item.quantity <= 1"
+                    :ui="{ base: 'rounded-full' }"
+                    @click="decrementQuantity(item.id)"
+                  />
+                  <span class="text-sm font-medium w-6 text-center">{{ item.item.quantity }}</span>
+                  <UButton
+                    icon="i-lucide-plus"
+                    size="xs"
+                    color="neutral"
+                    variant="outline"
+                    :ui="{ base: 'rounded-full' }"
+                    @click="incrementQuantity(item.id)"
+                  />
+                </div>
                 <p class="text-sm font-bold text-black mt-2">
                   DOP {{ formatNumber(item.item.price * item.item.quantity) }}
                 </p>
@@ -42,27 +61,12 @@
               />
             </div>
           </UCard>
-
-          <!-- Total -->
-          <div class="border-t pt-4 mt-4">
-            <div class="flex justify-between items-center">
-              <span class="text-base font-semibold">Total:</span>
-              <span class="text-lg font-bold">DOP {{ formatNumber(totalPrice) }}</span>
-            </div>
-            <UButton
-              class="w-full mt-4"
-              color="error"
-              size="lg"
-              label="Proceder al pago"
-              :ui="{ base: 'bg-red-600 hover:bg-red-700' }"
-            />
-          </div>
         </div>
       </div>
     </template>
 
     <template v-if="cart.length != 0" #footer>
-      <div class="border-t pt-4 mt-4 w-full">
+      <div class="w-full">
         <div class="flex justify-between items-center">
           <span class="text-base font-semibold">Total:</span>
           <span class="text-lg font-bold">DOP {{ formatNumber(totalPrice) }}</span>
@@ -70,9 +74,18 @@
         <UButton
           class="w-full mt-4"
           color="error"
-          size="lg"
+          size="xl"
           label="Proceder al pago"
           :ui="{ base: 'bg-red-600 hover:bg-red-700' }"
+        />
+        <UButton
+          class="w-full mt-4"
+          variant="outline"
+          color="neutral"
+          size="xl"
+          label="Ir al carrito"
+          as="NuxtLink"
+          to="/cart"
         />
       </div>
     </template>
@@ -80,29 +93,33 @@
 </template>
 
 <script setup lang="ts">
-const { cart, quantity, totalPrice, removeFromCart } = useCart();
+const { cart, quantity, totalPrice, removeFromCart, incrementQuantity, decrementQuantity } = useCart();
 </script>
 
 <style scoped>
-@reference "~/assets/css/main.css";
-
-.top-nav {
-  @apply w-full py-4;
-  ul {
-    @apply flex items-center lg:flex-row flex-col;
-    li {
-      @apply px-2 lg:w-auto w-full;
-    }
-    .nav-item-top {
-      @apply flex items-center text-xs text-[#191919] font-semibold;
-      .text {
-        @apply xl:inline-block hidden;
-      }
-      .icon {
-        @apply xl:mr-1.5 size-7;
-      }
-    }
-  }
+.nav-item-top {
+  display: flex;
+  align-items: center;
+  font-size: 0.75rem;
+  color: #191919;
+  font-weight: 600;
 }
 
+.nav-item-top .text {
+  display: none;
+}
+
+.nav-item-top .icon {
+  width: 1.75rem;
+  height: 1.75rem;
+}
+
+@media (min-width: 1280px) {
+  .nav-item-top .text {
+    display: inline-block;
+  }
+  .nav-item-top .icon {
+    margin-right: 0.375rem;
+  }
+}
 </style>
