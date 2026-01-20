@@ -34,6 +34,11 @@ export default defineAppConfig({
       slots: {
         base: 'font-bold'
       }
+    },
+    checkbox: {
+      slots: {
+        base: 'rounded-full',
+      }
     }
   }
 })

@@ -1,8 +1,6 @@
 <template>
   <main class="min-h-screen bg-gray-100 py-8">
     <div class="max-w-[1200px] mx-auto px-4">
-      <h1 class="text-2xl font-bold mb-6">Carrito de Compras</h1>
-
       <!-- Empty State -->
       <div v-if="cart.length === 0" class="flex flex-col items-center justify-center py-20 bg-white rounded-lg">
         <UIcon name="ph:shopping-cart-simple-light" class="size-24 text-gray-300 mb-4" />
@@ -15,8 +13,58 @@
       <div v-else class="grid lg:grid-cols-3 gap-6">
         <!-- Items List -->
         <div class="lg:col-span-2 space-y-4">
-          <UCard v-for="item in cart" :key="item.id" :ui="{ body: 'p-4' }">
+          <!-- Selection Controls -->
+          <UCard :ui="{
+            body: '!p-4',
+          }">
+            <h1 class="text-2xl font-bold mb-6">Cesta ({{cart.length}})</h1>
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-3">
+                <UCheckbox
+                  size="xl"
+                  v-model="selectAll"
+                  @change="toggleSelectAll"
+                />
+                <span class="text-sm font-medium">
+                  Seleccionar todos ({{ selectedItems.length }}/{{ cart.length }})
+                </span>
+              </div>
+              <UButton
+                v-if="selectedItems.length > 0"
+                icon="i-lucide-trash-2"
+                color="error"
+                variant="soft"
+                size="sm"
+                :label="`Eliminar (${selectedItems.length})`"
+                @click="removeSelectedItems"
+              />
+            </div>
+          </UCard>
+
+          <!-- Cart Items -->
+          <UCard v-for="item in cart" :key="item.id" :ui="{ body: '!p-4' }">
+            <!-- Store Name -->
+            <div v-if="item.item.store" class="mb-4  flex items-center gap-4">
+              <UCheckbox
+                size="xl"
+                :model-value="isSelected(item.id)"
+                @change="toggleItemSelection(item.id)"
+              />
+              <h3 class="text-md font-semibold text-gray-800">
+                {{ item.item.store.name}}
+              </h3>
+            </div>
+            <!-- -->
             <div class="flex gap-4">
+              <!-- Checkbox -->
+              <div class="flex items-center">
+                <UCheckbox
+                  size="xl"
+                  :model-value="isSelected(item.id)"
+                  @change="toggleItemSelection(item.id)"
+                />
+              </div>
+
               <img
                 :src="item.item.imageUrl || 'https://picsum.photos/120/120'"
                 :alt="item.item.name"
@@ -25,7 +73,7 @@
               <div class="flex-1">
                 <div class="flex justify-between items-start">
                   <div>
-                    <NuxtLink :to="`/item/${item.item.id}`" class="font-semibold text-gray-900 hover:text-primary">
+                    <NuxtLink :to="`/item/${item.item.id}`" class="font-medium text-[#222] hover:text-error text-sm text-ellipsis whitespace-nowrap">
                       {{ item.item.name }}
                     </NuxtLink>
                     <p class="text-sm text-gray-500 mt-1">{{ item.item.description }}</p>
@@ -39,29 +87,7 @@
                   />
                 </div>
 
-                <div class="flex justify-between items-end mt-4">
-                  <!-- Quantity Controls -->
-                  <div class="flex items-center gap-2">
-                    <UButton
-                      icon="i-lucide-minus"
-                      size="xs"
-                      color="neutral"
-                      variant="outline"
-                      :disabled="item.item.quantity <= 1"
-                      :ui="{ base: 'rounded-full' }"
-                      @click="decrementQuantity(item.id)"
-                    />
-                    <span class="w-8 text-center font-medium">{{ item.item.quantity }}</span>
-                    <UButton
-                      icon="i-lucide-plus"
-                      size="xs"
-                      color="neutral"
-                      variant="outline"
-                      :ui="{ base: 'rounded-full' }"
-                      @click="incrementQuantity(item.id)"
-                    />
-                  </div>
-
+                <div class="flex justify-between items-center mt-4">
                   <!-- Price -->
                   <div class="text-right">
                     <p class="text-lg font-bold text-gray-900">
@@ -70,6 +96,32 @@
                     <p v-if="item.item.discount" class="text-sm text-gray-400 line-through">
                       DOP {{ formatNumber((item.item.price + item.item.discount) * item.item.quantity) }}
                     </p>
+                  </div>
+
+                  <!-- Quantity Controls -->
+                  <div class="flex items-center gap-2 border border-gray-200 rounded-4xl px-1 w-[90px]">
+                    <UButton
+                      icon="i-lucide-minus"
+                      size="xs"
+                      color="neutral"
+                      variant="ghost"
+                      :disabled="item.item.quantity <= 1"
+                      :ui="{
+                        base: 'hover:bg-transparent hover:text-red-500'
+                      }"
+                      @click="decrementQuantity(item.id)"
+                    />
+                    <span class="w-8 text-center font-bold text-black">{{ item.item.quantity }}</span>
+                    <UButton
+                      icon="i-lucide-plus"
+                      size="xs"
+                      color="neutral"
+                      variant="ghost"
+                      :ui="{
+                        base: 'hover:bg-transparent hover:text-red-500'
+                      }"
+                      @click="incrementQuantity(item.id)"
+                    />
                   </div>
                 </div>
               </div>
@@ -109,7 +161,7 @@
               color="error"
               size="xl"
               label="Proceder al pago"
-              :ui="{ base: 'bg-red-600 hover:bg-red-700 font-bold' }"
+              :ui="{ base: 'bg-red-600 hover:bg-red-700 font-bold rounded-3xl' }"
             />
 
             <UButton
@@ -118,6 +170,7 @@
               color="neutral"
               variant="outline"
               size="lg"
+              :ui="{ base: 'rounded-3xl' }"
               label="Continuar comprando"
             />
           </UCard>
@@ -129,6 +182,57 @@
 
 <script setup lang="ts">
 const { cart, quantity, totalPrice, removeFromCart, incrementQuantity, decrementQuantity } = useCart();
+
+// Selected items
+const selectedItems = ref<number[]>([]);
+const selectAll = ref(false);
+
+// Check if item is selected
+const isSelected = (itemId: number) => {
+  return selectedItems.value.includes(itemId);
+};
+
+// Toggle single item selection
+const toggleItemSelection = (itemId: number) => {
+  const index = selectedItems.value.indexOf(itemId);
+  if (index > -1) {
+    selectedItems.value.splice(index, 1);
+  } else {
+    selectedItems.value.push(itemId);
+  }
+  // Update selectAll state
+  selectAll.value = selectedItems.value.length === cart.value.length;
+};
+
+// Toggle select all
+const toggleSelectAll = () => {
+  if (selectAll.value) {
+    selectedItems.value = cart.value.map(item => item.id);
+  } else {
+    selectedItems.value = [];
+  }
+};
+
+// Remove selected items
+const removeSelectedItems = () => {
+  selectedItems.value.forEach(itemId => {
+    const cartItem = cart.value.find(item => item.id === itemId);
+    if (cartItem) {
+      removeFromCart(cartItem.item.id);
+    }
+  });
+  selectedItems.value = [];
+  selectAll.value = false;
+};
+
+// Watch cart changes to update selection
+watch(cart, () => {
+  // Remove selected items that no longer exist in cart
+  selectedItems.value = selectedItems.value.filter(id =>
+    cart.value.some(item => item.id === id)
+  );
+  selectAll.value = selectedItems.value.length === cart.value.length && cart.value.length > 0;
+}, { deep: true });
 
 const totalDiscount = computed(() => {
   return cart.value.reduce((total, cartItem) => {

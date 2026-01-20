@@ -9,7 +9,11 @@
     "categories": ["relojes", "accesorios"],
     "discount": 175,
     "topSeller": true,
-    "slug": "reloj-pulsera-hombres"
+    "slug": "reloj-pulsera-hombres",
+    "store": {
+      "name": "Tienda Genérica",
+      "location": "CDMX"
+    }
   },
   {
     "id": 2,
@@ -21,7 +25,11 @@
     "categories": ["electrónica", "audio"],
     "discount": 300,
     "topSeller": true,
-    "slug": "auriculares-bluetooth-cancelacion"
+    "slug": "auriculares-bluetooth-cancelacion",
+    "store": {
+      "name": "Tienda Genérica",
+      "location": "CDMX"
+    }
   },
   {
     "id": 3,
@@ -33,7 +41,11 @@
     "categories": ["accesorios", "electrónica"],
     "discount": 50,
     "topSeller": false,
-    "slug": "funda-airpods-silicona"
+    "slug": "funda-airpods-silicona",
+    "store": {
+      "name": "Tienda Genérica",
+      "location": "CDMX"
+    }
   },
   {
     "id": 4,
@@ -45,7 +57,11 @@
     "categories": ["electrónica", "accesorios"],
     "discount": 100,
     "topSeller": true,
-    "slug": "cargador-inalambrico-15w"
+    "slug": "cargador-inalambrico-15w",
+    "store": {
+      "name": "Tienda Genérica",
+      "location": "CDMX"
+    }
   },
   {
     "id": 5,
@@ -57,7 +73,11 @@
     "categories": ["bolsos", "accesorios"],
     "discount": 350,
     "topSeller": true,
-    "slug": "mochila-antirrobo-laptop"
+    "slug": "mochila-antirrobo-laptop",
+    "store": {
+      "name": "Tienda Genérica",
+      "location": "CDMX"
+    }
   },
   {
     "id": 6,
@@ -69,7 +89,11 @@
     "categories": ["hogar", "iluminación"],
     "discount": 200,
     "topSeller": false,
-    "slug": "lampara-led-escritorio"
+    "slug": "lampara-led-escritorio",
+    "store": {
+      "name": "Tienda Genérica",
+      "location": "CDMX"
+    }
   },
   {
     "id": 7,
@@ -81,7 +105,11 @@
     "categories": ["electrónica", "gaming"],
     "discount": 150,
     "topSeller": true,
-    "slug": "mouse-gaming-rgb"
+    "slug": "mouse-gaming-rgb",
+    "store": {
+      "name": "Tienda Genérica",
+      "location": "CDMX"
+    }
   },
   {
     "id": 8,
@@ -93,7 +121,11 @@
     "categories": ["electrónica", "gaming"],
     "discount": 250,
     "topSeller": true,
-    "slug": "teclado-mecanico-rgb"
+    "slug": "teclado-mecanico-rgb",
+    "store": {
+      "name": "Tienda Genérica",
+      "location": "CDMX"
+    }
   },
   {
     "id": 9,
@@ -105,7 +137,11 @@
     "categories": ["relojes", "deportes"],
     "discount": 500,
     "topSeller": true,
-    "slug": "smartwatch-deportivo"
+    "slug": "smartwatch-deportivo",
+    "store": {
+      "name": "Tienda Genérica",
+      "location": "CDMX"
+    }
   },
   {
     "id": 10,
@@ -117,7 +153,11 @@
     "categories": ["electrónica", "seguridad"],
     "discount": 200,
     "topSeller": false,
-    "slug": "camara-seguridad-wifi"
+    "slug": "camara-seguridad-wifi",
+    "store": {
+      "name": "Tienda Genérica",
+      "location": "CDMX"
+    }
   },
   {
     "id": 11,
@@ -129,7 +169,11 @@
     "categories": ["hogar", "deportes"],
     "discount": 80,
     "topSeller": false,
-    "slug": "botella-termica-acero"
+    "slug": "botella-termica-acero",
+    "store": {
+      "name": "Tienda Genérica",
+      "location": "CDMX"
+    }
   },
   {
     "id": 12,
@@ -141,7 +185,11 @@
     "categories": ["accesorios", "oficina"],
     "discount": 150,
     "topSeller": true,
-    "slug": "soporte-laptop-aluminio"
+    "slug": "soporte-laptop-aluminio",
+    "store": {
+      "name": "Tienda Genérica",
+      "location": "CDMX"
+    }
   },
   {
     "id": 13,
@@ -153,7 +201,11 @@
     "categories": ["electrónica", "accesorios"],
     "discount": 300,
     "topSeller": true,
-    "slug": "hub-usbc-7en1"
+    "slug": "hub-usbc-7en1",
+    "store": {
+      "name": "Tienda Genérica",
+      "location": "CDMX"
+    }
   },
   {
     "id": 14,
@@ -165,7 +217,11 @@
     "categories": ["gaming", "accesorios"],
     "discount": 100,
     "topSeller": false,
-    "slug": "alfombrilla-xxl-gaming"
+    "slug": "alfombrilla-xxl-gaming",
+    "store": {
+      "name": "Tienda Genérica",
+      "location": "CDMX"
+    }
   },
   {
     "id": 15,
@@ -177,7 +233,11 @@
     "categories": ["electrónica", "oficina"],
     "discount": 180,
     "topSeller": true,
-    "slug": "webcam-fullhd-microfono"
+    "slug": "webcam-fullhd-microfono",
+    "store": {
+      "name": "Tienda Genérica",
+      "location": "CDMX"
+    }
   },
   {
     "id": 16,
@@ -189,7 +249,11 @@
     "categories": ["accesorios", "moda"],
     "discount": 120,
     "topSeller": false,
-    "slug": "gafas-sol-aviador"
+    "slug": "gafas-sol-aviador",
+    "store": {
+      "name": "Tienda Genérica",
+      "location": "CDMX"
+    }
   },
   {
     "id": 17,
@@ -201,7 +265,11 @@
     "categories": ["oficina", "hogar"],
     "discount": 30,
     "topSeller": false,
-    "slug": "organizador-cables"
+    "slug": "organizador-cables",
+    "store": {
+      "name": "Tienda Genérica",
+      "location": "CDMX"
+    }
   },
   {
     "id": 18,
@@ -213,7 +281,11 @@
     "categories": ["electrónica", "accesorios"],
     "discount": 250,
     "topSeller": true,
-    "slug": "powerbank-20000mah"
+    "slug": "powerbank-20000mah",
+    "store": {
+      "name": "Tienda Genérica",
+      "location": "CDMX"
+    }
   },
   {
     "id": 19,
@@ -225,7 +297,11 @@
     "categories": ["audio", "deportes"],
     "discount": 140,
     "topSeller": false,
-    "slug": "auriculares-deportivos"
+    "slug": "auriculares-deportivos",
+    "store": {
+      "name": "Tienda Genérica",
+      "location": "CDMX"
+    }
   },
   {
     "id": 20,
@@ -237,7 +313,11 @@
     "categories": ["fotografía", "accesorios"],
     "discount": 200,
     "topSeller": true,
-    "slug": "anillo-luz-tripode"
+    "slug": "anillo-luz-tripode",
+    "store": {
+      "name": "Tienda Genérica",
+      "location": "CDMX"
+    }
   },
   {
     "id": 21,
@@ -249,7 +329,11 @@
     "categories": ["accesorios", "electrónica"],
     "discount": 70,
     "topSeller": false,
-    "slug": "funda-tablet-universal"
+    "slug": "funda-tablet-universal",
+    "store": {
+      "name": "Tienda Genérica",
+      "location": "CDMX"
+    }
   },
   {
     "id": 22,
@@ -261,7 +345,11 @@
     "categories": ["audio", "streaming"],
     "discount": 300,
     "topSeller": true,
-    "slug": "microfono-condensador-usb"
+    "slug": "microfono-condensador-usb",
+    "store": {
+      "name": "Tienda Genérica",
+      "location": "CDMX"
+    }
   },
   {
     "id": 23,
@@ -273,7 +361,11 @@
     "categories": ["accesorios", "moda"],
     "discount": 90,
     "topSeller": false,
-    "slug": "cartera-rfid-minimalista"
+    "slug": "cartera-rfid-minimalista",
+    "store": {
+      "name": "Tienda Genérica",
+      "location": "CDMX"
+    }
   },
   {
     "id": 24,
@@ -285,7 +377,11 @@
     "categories": ["auto", "accesorios"],
     "discount": 60,
     "topSeller": true,
-    "slug": "soporte-telefono-auto"
+    "slug": "soporte-telefono-auto",
+    "store": {
+      "name": "Tienda Genérica",
+      "location": "CDMX"
+    }
   },
   {
     "id": 25,
@@ -297,7 +393,11 @@
     "categories": ["hogar", "cocina"],
     "discount": 80,
     "topSeller": false,
-    "slug": "bascula-digital-cocina"
+    "slug": "bascula-digital-cocina",
+    "store": {
+      "name": "Tienda Genérica",
+      "location": "CDMX"
+    }
   },
   {
     "id": 26,
@@ -309,7 +409,11 @@
     "categories": ["hogar", "iluminación"],
     "discount": 50,
     "topSeller": false,
-    "slug": "luz-nocturna-sensor"
+    "slug": "luz-nocturna-sensor",
+    "store": {
+      "name": "Tienda Genérica",
+      "location": "CDMX"
+    }
   },
   {
     "id": 27,
@@ -321,7 +425,11 @@
     "categories": ["electrónica", "accesorios"],
     "discount": 70,
     "topSeller": true,
-    "slug": "cable-usbc-lightning"
+    "slug": "cable-usbc-lightning",
+    "store": {
+      "name": "Tienda Genérica",
+      "location": "CDMX"
+    }
   },
   {
     "id": 28,
@@ -333,7 +441,11 @@
     "categories": ["hogar", "bienestar"],
     "discount": 140,
     "topSeller": false,
-    "slug": "humidificador-ultrasonico"
+    "slug": "humidificador-ultrasonico",
+    "store": {
+      "name": "Tienda Genérica",
+      "location": "CDMX"
+    }
   },
   {
     "id": 29,
@@ -345,7 +457,11 @@
     "categories": ["moda", "accesorios"],
     "discount": 40,
     "topSeller": false,
-    "slug": "guantes-tactiles"
+    "slug": "guantes-tactiles",
+    "store": {
+      "name": "Tienda Genérica",
+      "location": "CDMX"
+    }
   },
   {
     "id": 30,
@@ -357,7 +473,11 @@
     "categories": ["audio", "electrónica"],
     "discount": 220,
     "topSeller": true,
-    "slug": "altavoz-bluetooth-portatil"
+    "slug": "altavoz-bluetooth-portatil",
+    "store": {
+      "name": "Tienda Genérica",
+      "location": "CDMX"
+    }
   },
   {
     "id": 31,
@@ -369,7 +489,11 @@
     "categories": ["accesorios", "audio"],
     "discount": 40,
     "topSeller": false,
-    "slug": "estuche-auriculares"
+    "slug": "estuche-auriculares",
+    "store": {
+      "name": "Tienda Genérica",
+      "location": "CDMX"
+    }
   },
   {
     "id": 32,
@@ -381,7 +505,11 @@
     "categories": ["oficina", "hogar"],
     "discount": 70,
     "topSeller": false,
-    "slug": "ventilador-usb-escritorio"
+    "slug": "ventilador-usb-escritorio",
+    "store": {
+      "name": "Tienda Genérica",
+      "location": "CDMX"
+    }
   },
   {
     "id": 33,
@@ -393,7 +521,11 @@
     "categories": ["accesorios", "electrónica"],
     "discount": 30,
     "topSeller": true,
-    "slug": "protector-pantalla-iphone"
+    "slug": "protector-pantalla-iphone",
+    "store": {
+      "name": "Tienda Genérica",
+      "location": "CDMX"
+    }
   },
   {
     "id": 34,
@@ -405,7 +537,11 @@
     "categories": ["accesorios", "oficina"],
     "discount": 100,
     "topSeller": false,
-    "slug": "soporte-tablet-plegable"
+    "slug": "soporte-tablet-plegable",
+    "store": {
+      "name": "Tienda Genérica",
+      "location": "CDMX"
+    }
   },
   {
     "id": 35,
@@ -417,7 +553,11 @@
     "categories": ["relojes", "accesorios"],
     "discount": 60,
     "topSeller": true,
-    "slug": "correa-apple-watch"
+    "slug": "correa-apple-watch",
+    "store": {
+      "name": "Tienda Genérica",
+      "location": "CDMX"
+    }
   },
   {
     "id": 36,
@@ -429,7 +569,11 @@
     "categories": ["accesorios", "electrónica"],
     "discount": 35,
     "topSeller": false,
-    "slug": "limpiador-pantallas"
+    "slug": "limpiador-pantallas",
+    "store": {
+      "name": "Tienda Genérica",
+      "location": "CDMX"
+    }
   },
   {
     "id": 37,
@@ -441,7 +585,11 @@
     "categories": ["gaming", "electrónica"],
     "discount": 180,
     "topSeller": true,
-    "slug": "gamepad-inalambrico"
+    "slug": "gamepad-inalambrico",
+    "store": {
+      "name": "Tienda Genérica",
+      "location": "CDMX"
+    }
   },
   {
     "id": 38,
@@ -453,7 +601,11 @@
     "categories": ["oficina", "hogar"],
     "discount": 120,
     "topSeller": false,
-    "slug": "organizador-escritorio"
+    "slug": "organizador-escritorio",
+    "store": {
+      "name": "Tienda Genérica",
+      "location": "CDMX"
+    }
   },
   {
     "id": 39,
@@ -465,7 +617,11 @@
     "categories": ["viaje", "electrónica"],
     "discount": 140,
     "topSeller": true,
-    "slug": "adaptador-viaje-universal"
+    "slug": "adaptador-viaje-universal",
+    "store": {
+      "name": "Tienda Genérica",
+      "location": "CDMX"
+    }
   },
   {
     "id": 40,
@@ -477,7 +633,11 @@
     "categories": ["deportes", "relojes"],
     "discount": 160,
     "topSeller": true,
-    "slug": "pulsera-fitness"
+    "slug": "pulsera-fitness",
+    "store": {
+      "name": "Tienda Genérica",
+      "location": "CDMX"
+    }
   },
   {
     "id": 41,
@@ -489,7 +649,11 @@
     "categories": ["accesorios", "deportes"],
     "discount": 40,
     "topSeller": false,
-    "slug": "funda-impermeable-telefono"
+    "slug": "funda-impermeable-telefono",
+    "store": {
+      "name": "Tienda Genérica",
+      "location": "CDMX"
+    }
   },
   {
     "id": 42,
@@ -501,7 +665,11 @@
     "categories": ["seguridad", "electrónica"],
     "discount": 200,
     "topSeller": false,
-    "slug": "candado-huella-digital"
+    "slug": "candado-huella-digital",
+    "store": {
+      "name": "Tienda Genérica",
+      "location": "CDMX"
+    }
   },
   {
     "id": 43,
@@ -513,7 +681,11 @@
     "categories": ["audio", "accesorios"],
     "discount": 90,
     "topSeller": false,
-    "slug": "soporte-auriculares"
+    "slug": "soporte-auriculares",
+    "store": {
+      "name": "Tienda Genérica",
+      "location": "CDMX"
+    }
   },
   {
     "id": 44,
@@ -525,7 +697,11 @@
     "categories": ["herramientas", "outdoor"],
     "discount": 100,
     "topSeller": true,
-    "slug": "linterna-led-potente"
+    "slug": "linterna-led-potente",
+    "store": {
+      "name": "Tienda Genérica",
+      "location": "CDMX"
+    }
   },
   {
     "id": 45,
@@ -537,7 +713,11 @@
     "categories": ["hogar", "oficina"],
     "discount": 70,
     "topSeller": false,
-    "slug": "bolsa-termica-almuerzo"
+    "slug": "bolsa-termica-almuerzo",
+    "store": {
+      "name": "Tienda Genérica",
+      "location": "CDMX"
+    }
   },
   {
     "id": 46,
@@ -549,7 +729,11 @@
     "categories": ["electrónica", "hogar"],
     "discount": 180,
     "topSeller": true,
-    "slug": "extensor-wifi-dualband"
+    "slug": "extensor-wifi-dualband",
+    "store": {
+      "name": "Tienda Genérica",
+      "location": "CDMX"
+    }
   },
   {
     "id": 47,
@@ -561,7 +745,11 @@
     "categories": ["cocina", "hogar"],
     "discount": 50,
     "topSeller": false,
-    "slug": "tijeras-cocina"
+    "slug": "tijeras-cocina",
+    "store": {
+      "name": "Tienda Genérica",
+      "location": "CDMX"
+    }
   },
   {
     "id": 48,
@@ -573,7 +761,11 @@
     "categories": ["electrónica", "almacenamiento"],
     "discount": 120,
     "topSeller": true,
-    "slug": "memoria-usb-128gb"
+    "slug": "memoria-usb-128gb",
+    "store": {
+      "name": "Tienda Genérica",
+      "location": "CDMX"
+    }
   },
   {
     "id": 49,
@@ -585,7 +777,11 @@
     "categories": ["deportes", "moda"],
     "discount": 60,
     "topSeller": false,
-    "slug": "gorra-deportiva-uv"
+    "slug": "gorra-deportiva-uv",
+    "store": {
+      "name": "Tienda Genérica",
+      "location": "CDMX"
+    }
   },
   {
     "id": 50,
@@ -597,7 +793,10 @@
     "categories": ["iluminación", "hogar"],
     "discount": 160,
     "topSeller": true,
-    "slug": "cinta-led-rgb"
+    "slug": "cinta-led-rgb",
+    "store": {
+      "name": "Tienda Genérica",
+      "location": "CDMX"
+    }
   }
 ]
-

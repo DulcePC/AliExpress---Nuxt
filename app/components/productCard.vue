@@ -51,6 +51,7 @@ const { addToCart } = useCart();
 const handleAddToCart = () => {
   if (!props.product) return;
 
+  console.log(props.product.store.name)
   addToCart({
     id: Date.now(),
     item: {

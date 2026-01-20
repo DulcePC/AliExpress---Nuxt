@@ -8,5 +8,10 @@ export interface Product {
   categories: string[];
   discount: number;
   topSeller: boolean;
-  slug: string
+  slug: string,
+  store: {
+    id: number | string;
+    name: string;
+    location: string;
+  } | null;
 }
